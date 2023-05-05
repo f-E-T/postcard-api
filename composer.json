@@ -1,6 +1,6 @@
 {
     "name": "fet/postcard-api",
-    "description": "A PHP implementation for the postcard API",
+    "description": "A PHP implementation of the Swiss Postcard API",
     "keywords": ["postcard", "api"],
     "license": "MIT",
     "homepage": "https://github.com/f-e-t/postcard-api",
