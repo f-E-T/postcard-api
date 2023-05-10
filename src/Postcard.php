@@ -274,6 +274,10 @@ class Postcard
     {
         $this->handleResponse($this->postcardGateway->approve($this->getResource()->getCardKey()));
 
+        if (!empty($this->getErrors())) {
+            throw new PostcardException('Unable to approve the postcard, because the API returns errors.');
+        }
+
         $postcardApproval = new Approval();
         $postcardApproval->approve();
 

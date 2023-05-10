@@ -266,6 +266,25 @@ class PostcardTest extends TestCase
     }
 
     /** @test */
+    public function it_cannot_approve_a_postcard_resource_when_the_api_returns_errors()
+    {
+        $authenticationResponse = $this->getAuthenticationResponse();
+        
+        $defaultResponse = $this->getDefaultResponse();
+        $defaultResponse->setErrors([
+            [
+                'code' => 'code1',
+                'description' => 'description1',
+            ],
+        ]);
+        $gateway = $this->getMock(PostcardContract::class, 'approve', $defaultResponse, ['card-key']);
+        $postcard = new Postcard('campaign-key', $gateway, $authenticationResponse);
+
+        $this->expectException(PostcardException::class);
+        $postcard->approve();
+    }
+
+    /** @test */
     public function it_returns_the_current_state()
     {
         $postcardStateResponse = new PostcardStateResponse();
