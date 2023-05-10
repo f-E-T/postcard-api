@@ -2,7 +2,7 @@
 This package is still under development and not yet ready for production use. Please use it with caution and at your own risk. We will update this notice once the package is stable and production-ready.
 
 # Introduction
-The `fet/postcard-api` package is a PHP implementation of the postcard API (see [References](#references)).
+The `fet/postcard-api` package is a PHP implementation of the Swiss Postcard API (see [References](#references)).
 
 # Installation
 To install this package, use Composer:
@@ -132,6 +132,30 @@ $warnings = $postcard->getWarnings();
 // returns a multidimensional array with errors
 $errors = $postcard->getErrors();
 ```
+
+# Demo
+## Configuration
+Before running the demo, you have to edit the `examples/config.php` file:
+
+```php
+return [
+    'url' => 'POSTCARD_API_URL',
+    'campaign_key' => 'POSTCARD_API_CAMPAIGN_KEY',
+    'client_id' => 'POSTCARD_API_CLIENT_ID',
+    'client_secret' => 'POSTCARD_API_CLIENT_SECRET',
+];
+```
+
+## Running the demo in your browser
+To launch a demo and see how the postcard API works in action, follow these steps:
+
+1. Start a local PHP development server by running the following command:
+
+```bash
+php -S localhost:8888 -t examples
+```
+
+2. Open your web browser and navigate to the following URL: `http://localhost:8888/`
 
 # Tests
 Run the tests with:
