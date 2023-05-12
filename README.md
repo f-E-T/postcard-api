@@ -91,7 +91,7 @@ $senderText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 // create the postcard
 $postcard = $postcardCreator->create($recipient, $sender, $image, $senderText);
 
-// approves the postcard
+// approve the postcard
 $postcard->approve();
 ```
 
@@ -122,8 +122,11 @@ $postcard->getBackPreview()->getImageData();
 
 > The `addBrandingText()`, `addBrandingImage()`, and `addBrandingQrTag()` methods cannot be used in combination with each other, as they will overwrite each other's content. Choose one method to use for your postcard branding.
 
+### Approval
+The postcard can only be approved if no errors are returned from the API. Otherwise, a `Fet\PostcardApi\Exception\PostcardException.php` exception will be thrown.
+
 ### Handling warnings and errors
-If there are warnings or errors during the process of creating a postcard, you can retrieve them as follow:
+If there are warnings or errors returned from the API during the process of creating a postcard, you can retrieve them as follow:
 
 ```php
 // returns a multidimensional array with warnings
