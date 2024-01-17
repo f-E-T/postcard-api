@@ -1,6 +1,3 @@
-## ⚠️ Under development ⚠️
-This package is still under development and not yet ready for production use. Please use it with caution and at your own risk. We will update this notice once the package is stable and production-ready.
-
 # Introduction
 The `fet/postcard-api` package is a PHP implementation of the Swiss Postcard API (see [References](#references)).
 

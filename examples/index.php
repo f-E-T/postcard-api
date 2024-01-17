@@ -365,7 +365,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <h2 class="text-2xl font-semibold mb-6">Postcard Preview</h2>
 
           <div class="mt-8">
-            <?php if (empty($postcard->getErrors())) : ?>
+            <?php if ($postcard ?? false && empty($postcard->getErrors())) : ?>
               <div class="flex justify-around">
                 <div class="bg-blue-100 p-4 rounded shadow">
                   <h3 class="text-lg font-bold mb-2">Front Image</h3>
